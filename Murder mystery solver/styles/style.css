@@ -1,0 +1,171 @@
+/* styles/style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap');
+
+body {
+  background-color: #1e1e1e;
+  color: #f5f0e6;
+  font-family: 'Lora', serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  border-bottom: 2px solid #444;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #e4cbb2;
+}
+
+main {
+  padding: 2rem;
+}
+
+button {
+  background-color: #3e3a36;
+  color: #f5f0e6;
+  border: 1px solid #e4cbb2;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  margin: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #574f4a;
+}
+
+/* Intro Typewriter Animation */
+#intro-screen {
+  background-color: #1a1a1a;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+#typewriter-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  max-width: 700px;
+  text-align: center;
+  color: #e4cbb2;
+  border-right: 2px solid #e4cbb2;
+  white-space: pre-wrap;
+  overflow: hidden;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+/* CASE SELECTOR STYLING */
+.case-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.case-card {
+  width: 200px;
+  background-color: #2f2f2f;
+  border: 2px solid #8c7e6c;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.case-card:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.5);
+}
+
+.case-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-bottom: 1px solid #8c7e6c;
+}
+
+.case-card h3 {
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  color: #f5f0e6;
+}
+
+/* Game sections */
+#characters .character {
+  background-color: #2e2e2e;
+  border: 1px solid #6e6051;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#characters img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #8c7e6c;
+}
+
+#timeline, #clues, #deduction, #memory, #map {
+  margin-top: 2rem;
+  background-color: #262626;
+  padding: 1rem;
+  border-left: 4px solid #8c7e6c;
+}
+
+ul#clue-list {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+/* Mini Map Styling */
+#map {
+  text-align: center;
+}
+
+#map img {
+  width: 90%;
+  max-width: 600px;
+  border: 2px solid #8c7e6c;
+  margin-bottom: 1rem;
+}
+
+#room-buttons button {
+  margin: 0.3rem;
+  background-color: #4a3f36;
+  border: 1px solid #a49383;
+}
+
+#room-buttons button.visited {
+  background-color: #6b5d4b;
+  border-color: #c9b9a0;
+}
+
+@media (max-width: 600px) {
+  .case-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  #map img {
+    width: 100%;
+  }
+}

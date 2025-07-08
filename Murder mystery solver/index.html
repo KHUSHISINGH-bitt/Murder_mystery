@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Murder Mystery Solver</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Murder Mystery Solver</h1>
+    <p>Welcome, Detective. Choose your case and begin your investigation.</p>
+  </header>
+
+  <!-- Intro Screen -->
+  <section id="intro-screen">
+    <div id="typewriter-text"></div>
+  </section>
+
+  <main style="display: none;">
+    <!-- Case Selector -->
+    <section id="case-selector">
+      <h2>Select a Case</h2>
+      <div class="case-grid">
+        <div class="case-card" onclick="loadCase('manor'); playSound('typewriter');">
+          <img src="assets/images/case-manor.jpg" alt="Murder at the Manor" />
+          <h3>Murder at the Manor</h3>
+        </div>
+        <div class="case-card" onclick="loadCase('express'); playSound('typewriter');">
+          <img src="assets/images/case-express.jpg" alt="Shadows on the Express" />
+          <h3>Shadows on the Express</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Content -->
+    <section id="game-content" style="display: none;">
+      <!-- Difficulty Selector -->
+      <section id="difficulty">
+        <h2>Select Difficulty</h2>
+        <button onclick="setDifficulty('easy')">Easy</button>
+        <button onclick="setDifficulty('medium')">Medium</button>
+        <button onclick="setDifficulty('hard')">Hard</button>
+      </section>
+
+      <!-- Mini Map -->
+      <section id="map">
+        <h2>Explore the Scene</h2>
+        <img id="map-image" src="" alt="Map of the crime scene" />
+        <div id="room-buttons" class="room-button-group"></div>
+      </section>
+
+      <!-- Character Profiles -->
+      <section id="characters">
+        <h2>Suspects</h2>
+        <div id="character-container"></div>
+      </section>
+
+      <!-- Clue Collection -->
+      <section id="clues">
+        <h2>Clue Journal</h2>
+        <ul id="clue-list"></ul>
+        <div id="clue-buttons"></div>
+      </section>
+
+      <!-- Timeline -->
+      <section id="timeline">
+        <h2>Timeline of Events</h2>
+        <p id="timeline-content"></p>
+      </section>
+
+      <!-- Deduction Logic -->
+      <section id="deduction">
+        <h2>Who is the murderer?</h2>
+        <div id="deduction-buttons"></div>
+      </section>
+
+      <!-- Save/Load Game -->
+      <section id="memory">
+        <h2>Game Progress</h2>
+        <button onclick="saveGame()">💾 Save Progress</button>
+        <button onclick="loadGame()">📂 Load Progress</button>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dark Academia Crime Scene &copy; 2025</p>
+  </footer>
+
+  <script src="scripts/script.js"></script>
+</body>
+</html>
